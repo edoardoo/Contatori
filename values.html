@@ -1,0 +1,36 @@
+<template name="values">
+	<h1>Gestione Valori</h1>
+		<div class="row">
+
+			{{#each gestori}}
+
+				<div class="col-md-3">
+					<h2>{{name}}</h2>
+					<div class="row">
+						<div class="col-md-12">
+							
+
+								{{#each valori}}
+								<div class="row">
+									<div class="col-md-12">
+										<input type="text" class="lettura form-control" name="{{name}}" placeholder="{{niceName}}"/>
+									</div>
+								</div>
+								{{/each}}
+							
+							<div class="row">
+								<div class="col-md-12">
+									<button class="btn btn-info btn-block" id="insert">Inserisci</button>
+
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			{{/each}}
+
+		</div>
+
+</template>

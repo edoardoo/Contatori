@@ -1,0 +1,22 @@
+<template name="inserimento">
+	<div class="row">
+		<div class='col-md-12'>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#nuovaLettura">
+  Nuova Lettura</button>
+		</div>
+	</div>
+	<div class="row collapse out" id="nuovaLettura">
+	{{#each contatori}}
+		<div class="col-md-2">
+  			<input type="text" class="lettura form-control" name="{{name}}" placeholder="{{name}}"/>
+  		</div>
+
+  	{{/each}}  
+  		<div class="col-md-2">
+
+  		<button class="btn btn-info" id="insert">Inserisci</button>
+  	</div>
+
+  </div>
+  
+</template>

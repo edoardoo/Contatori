@@ -1,0 +1,39 @@
+<template name="visualizzazione">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<th>Data di Lettura</th>
+						<th>Mese di Riferimento</th>
+						<th>Enel A1</th>
+						<th>Enel A2</th>
+						<th>Enel A3</th>
+						<th>Gas</th>
+						<th>Acqua</th>
+						<th>Opzioni</th>
+
+					</thead>
+					<tbody>
+
+				{{#each letture}}
+			  		<!-- <input type="text" class="lettura" name="{{name}}" placeholder="{{name}}"/> -->
+			  		<tr>
+			  			<td>{{datePerformed}}</td>
+
+			  			<td>{{date}}</td>
+			  			{{#each array }}
+
+			  				<td> {{valore}}</td>
+			  			{{/each}}
+			  			<td><button class='del btn btn-danger glyphicon glyphicon-remove'></button></td>
+			  		</tr>
+
+			  	{{/each}}  
+			  		</tbody>
+			  </table>
+			</div>
+	  </div>
+	</div>
+  
+</template>
