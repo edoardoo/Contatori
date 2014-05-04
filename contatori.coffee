@@ -3,14 +3,14 @@ Letture = new Meteor.Collection 'letture'
 Gestori = new Meteor.Collection 'gestori'
 
 if Meteor.isClient
+	#if there are no users, this lets you create one
+	Meteor.subscribe "usersList", ->
+		
+		if Meteor.users.find().count() != 0
+			Accounts.config forbidClientAccountCreation: true
+		return
 
-	notFirstAcces = true
-
-	if Meteor.users.find().count() is 0
-		notFirstAcces = false
-	else
-
-	Accounts.config forbidClientAccountCreation: true
+	
 
 	Router.map ->
 		@route "main",
@@ -92,6 +92,8 @@ if Meteor.isClient
 
 if Meteor.isServer
 	
+	Meteor.publish "usersList", ->
+		Meteor.users.find()
 
 	
 
