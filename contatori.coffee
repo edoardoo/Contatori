@@ -4,7 +4,14 @@ Gestori = new Meteor.Collection 'gestori'
 
 if Meteor.isClient
 
+	notFirstAcces = true
+
+	if Meteor.users.find().count() is 0
+		notFirstAcces = false
+	else
+
 	Accounts.config forbidClientAccountCreation: true
+
 	Router.map ->
 		@route "main",
 			path: "/",
